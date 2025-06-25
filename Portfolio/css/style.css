@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import "flowbite/src/themes/default";
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  
+}
+
+body {
+    background: #001233 !important;
+    height: 100%;
+}
+/* #001233 */
+.header_container {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+.nav_container {
+    border: 2px solid #87878700;
+    border-radius: 25px 25px 25px 25px;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 3em;
+
+}
+
+.nav_ul {
+  display: flex;
+  gap: 5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+
+.nav_ul li a:hover {
+  color: #338fff;
+}
+
+.container-section {
+  height: 100vh;
+  position: relative;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  gap: 15em;
+}
+
+.section-content {
+    max-width: 600px;
+}
+
+.section-content h1 {
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.section-content h3 {
+    font-weight: 700;
+    font-size: 32px;
+    color:#3399FF;
+}
+
+.section-content p {
+    margin-top: 10px;
+}
+
+.design3d {
+    position: absolute;
+    top: 0;
+    right: -20%;
+}
+.img-3d {
+    height: 440px;
+}
+
+
+.image-download-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.35em 0.8em;
+  border: 2px solid #3399FF;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  align-self: start;
+}
+.image-download-wrapper a {
+    font-size: 17px;
+}
+.download-button:hover {
+  background-color: #3399FF;
+  color: white;
+}
+
+.download-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+.flex-icons {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    align-content: center;
+}
+
+.icons {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #3399FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px; /* opcional, solo si no quieres que el contenido se achique */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icons:hover {
+  background-color: #3399FF;
+  color: white;
+}
+
+/* Contenedor principal */
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.skills-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.skills-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid de habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+/* Cajas de habilidades */
+.skill-box {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Iconos */
+.skill-box i {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+/* Colores específicos para cada icono */
+.html-icon { color: #e34f26; }
+.css-icon { color: #2965f1; }
+.js-icon { color: #f7df1e; }
+.python-icon { color: #3776ab; }
+.java-icon { color: #007396; }
+.php-icon { color: #777bb4; }
+
+/* Texto */
+.skill-box span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #f0f0f0;
+    }
+    
+    .skills-container {
+    }
+    
+    .skills-title {
+        color: #f0f0f0;
+    }
+    
+    .skill-box {
+        background-color: #b2b2b2;
+        border-color: #444;
+    }
+    
+    .skill-box span {
+        color: #f0f0f0;
+    }
+}
