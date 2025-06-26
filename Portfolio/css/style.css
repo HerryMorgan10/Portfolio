@@ -275,3 +275,9 @@ body {
 .footer-formulario button:hover {
   background-color: #180a81;
 }
+
+.input-sm {
+    height: 40px;
+    font-size: 1rem;
+  }
+
