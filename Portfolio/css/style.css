@@ -10,7 +10,9 @@
   color: white;
   
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
     background: #001233 !important;
     height: 100%;
@@ -56,7 +58,7 @@ body {
 }
 
 .container-section {
-  height: 100vh;
+  height: 90vh;
   position: relative;
   padding: 2em;
   display: flex;
@@ -153,100 +155,233 @@ body {
   color: white;
 }
 
-/* Contenedor principal */
-.skills-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.sobre-mi {
+  display: flex;
+  flex-wrap: wrap; /* responsive */
+  align-items: center;
+  gap:12em;
+  margin: 0 auto;
+  padding: 2em;
+  max-width: 80em;
+ 
 }
 
-/* Título */
-.skills-title {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    position: relative;
+.imagen-sobre-mi img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.skills-title::after {
-    content: '';
-    display: block;
+.texto-sobre-mi {
+  flex: 1;
+}
+
+.texto-sobre-mi h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  position: relative;
+  display: inline-block;
+}
+.texto-sobre-mi h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0%; 
+  width: 70%; 
+  height: 2px;
+  background-color: #3399FF; 
+}
+.texto-sobre-mi p {
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+.icon-layout {
+   display: grid;
+  grid-template-columns: repeat(7, 1fr); /* para posicionar 4 arriba y 3 abajo */
+  gap: 5rem;                           /* menos espacio entre iconos */
+  justify-items: center;
+
+  max-width: 1300px;                     /* reduce el ancho total del grid */
+  margin: 0 auto;                       /* centra horizontalmente */
+  padding: 1rem 0;
+  margin-top: 20px;
+}
+
+/* ICONOS DE ARRIBA – columnas 1, 3, 5, 7 */
+.icon-top:nth-child(1) { grid-column: 1; }
+.icon-top:nth-child(2) { grid-column: 3; }
+.icon-top:nth-child(3) { grid-column: 5; }
+.icon-top:nth-child(4) { grid-column: 7; }
+
+/* ICONOS DE ABAJO – columnas 2, 4, 6 */
+.icon-bottom:nth-child(5) { grid-column: 2; }
+.icon-bottom:nth-child(6) { grid-column: 4; }
+.icon-bottom:nth-child(7) { grid-column: 6; }
+
+.im1{
+    width: 70px;
+    height: auto;
+}
+
+.im2{
+    width:70px;
+    height: auto;
+}
+
+.im3{
+    width: 90px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.im4{
+    width: 70px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.im5{
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.im6{
+    width: 70px;
+    height: auto;
+    margin-top: 10px;
+}
+.im7{
     width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, #3498db, #9b59b6);
-    margin: 15px auto 0;
-    border-radius: 2px;
+    height: auto;
 }
 
-/* Grid de habilidades */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 25px;
-    justify-items: center;
+.titulo-experiencia h3 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  position: relative;
+  display: inline-block;
+  margin-top: 4em;
+}
+.titulo-experiencia h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0%; 
+  width: 70%; 
+  height: 2px;
+  background-color: #3399FF; 
+  bottom: -10px;
+}
+.separacion-top {
+  margin-top: 2em;
 }
 
-/* Cajas de habilidades */
-.skill-box {
-    width: 150px;
-    height: 150px;
-    background-color: white;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+
+.footer-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #010918;
+  color: #333;
+  margin-top: 15em;
+
 }
 
-.skill-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
-/* Iconos */
-.skill-box i {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
+.footer-info,
+.footer-formulario {
+  flex: 1 1 300px;
+  max-width: 500px;
+  justify-content: center;
+  align-content: center;
 }
 
-/* Colores específicos para cada icono */
-.html-icon { color: #e34f26; }
-.css-icon { color: #2965f1; }
-.js-icon { color: #f7df1e; }
-.python-icon { color: #3776ab; }
-.java-icon { color: #007396; }
-.php-icon { color: #777bb4; }
-
-/* Texto */
-.skill-box span {
-    font-size: 1.1rem;
-    font-weight: 600;
+.footer-info h3,
+.footer-formulario h3 {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 40px;
+  position: relative;
+  display: inline-block;
+}
+.footer-formulario h3::after {
+  content: "";
+  position: absolute;
+  left: 26%;
+  transform: translateX(-50%);
+  bottom: -10px; /* espacio debajo del texto */
+  width: 200px;   /* ancho de la línea */
+  height: 4px;
+  background-color: #3399FF; /* o cualquier color corporativo */
+  border-radius: 2px;
 }
 
-/* Modo oscuro */
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #f0f0f0;
-    }
-    
-    .skills-container {
-    }
-    
-    .skills-title {
-        color: #f0f0f0;
-    }
-    
-    .skill-box {
-        background-color: #b2b2b2;
-        border-color: #444;
-    }
-    
-    .skill-box span {
-        color: #f0f0f0;
-    }
+.footer-info h3::after {
+  content: "";
+  position: absolute;
+  left: 32%;
+  transform: translateX(-50%);
+  bottom: -10px; /* espacio debajo del texto */
+  width: 100px;   /* ancho de la línea */
+  height: 4px;
+  background-color: #3399FF; /* o cualquier color corporativo */
+  border-radius: 2px;
+}
+
+
+.footer-info p {
+  margin: 0.5rem 0;
+}
+
+.social-icons a {
+  margin-right: 0.5rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-formulario input,
+.footer-formulario textarea {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.footer-formulario button {
+  padding: 0.8rem;
+  background-color: #3399FF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-formulario button:hover {
+  background-color: #180a81;
 }
