@@ -8,16 +8,17 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   color: white;
-  
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
-    background: #001233 !important;
-    height: 100%;
+  background: #001233;
+  height: 100%;
 }
-/* #001233 */
+
 .header_container {
   height: 4em;
   display: flex;
@@ -27,22 +28,18 @@ body {
   position: relative;
   z-index: 10;
 }
-.nav_container {
-    border: 2px solid #87878700;
-    border-radius: 25px 25px 25px 25px;
-    padding: 10px;
-    padding-right: 25px;
-    padding-left: 25px;
-    margin-top: 3em;
 
+.nav_container {
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 10px 25px;
+  margin-top: 3em;
 }
 
 .nav_ul {
   display: flex;
   gap: 5em;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav_ul li a {
@@ -59,8 +56,6 @@ body {
 
 .container-section {
   height: 90vh;
-  position: relative;
-  padding: 2em;
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -68,33 +63,27 @@ body {
 }
 
 .section-content {
-    max-width: 600px;
+  max-width: 600px;
 }
 
 .section-content h1 {
-    font-size: 56px;
-    font-weight: bold;
+  font-size: 56px;
+  font-weight: bold;
 }
 
 .section-content h3 {
-    font-weight: 700;
-    font-size: 32px;
-    color:#3399FF;
+  font-weight: 700;
+  font-size: 32px;
+  color:#3399FF;
 }
 
 .section-content p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-.design3d {
-    position: absolute;
-    top: 0;
-    right: -20%;
-}
 .img-3d {
-    height: 440px;
+  height: 440px;
 }
-
 
 .image-download-wrapper {
   display: flex;
@@ -116,12 +105,9 @@ body {
   transition: background-color 0.3s ease;
   align-self: start;
 }
-.image-download-wrapper a {
-    font-size: 17px;
-}
+
 .download-button:hover {
   background-color: #3399FF;
-  color: white;
 }
 
 .download-button svg {
@@ -131,10 +117,9 @@ body {
 }
 
 .flex-icons {
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  gap: 2em;
+  align-items: center;
 }
 
 .icons {
@@ -145,25 +130,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 22px; /* opcional, solo si no quieres que el contenido se achique */
+  padding: 22px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .icons:hover {
   background-color: #3399FF;
-  color: white;
 }
 
 .sobre-mi {
   display: flex;
-  flex-wrap: wrap; /* responsive */
+  flex-wrap: wrap;
   align-items: center;
-  gap:12em;
+  gap: 12em;
   margin: 0 auto;
   padding: 2em;
   max-width: 80em;
- 
 }
 
 .imagen-sobre-mi img {
@@ -178,112 +161,72 @@ body {
   flex: 1;
 }
 
-.texto-sobre-mi h3 {
-  font-size: 45px;
+.texto-sobre-mi h3,
+.titulo-experiencia h3,
+.footer-info h3,
+.footer-formulario h3 {
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 0.5em;
   position: relative;
   display: inline-block;
 }
-.texto-sobre-mi h3::after {
+
+.texto-sobre-mi h3::after,
+.titulo-experiencia h3::after,
+.footer-info h3::after,
+.footer-formulario h3::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0%; 
-  width: 70%; 
+  bottom: -10px;
+  left: 0;
+  width: 100px;
   height: 2px;
-  background-color: #3399FF; 
+  background-color: #3399FF;
+  border-radius: 2px;
 }
+
 .texto-sobre-mi p {
   font-size: 1em;
   line-height: 1.6;
   text-align: justify;
 }
 
-
 .icon-layout {
-   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* para posicionar 4 arriba y 3 abajo */
-  gap: 5rem;                           /* menos espacio entre iconos */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5rem;
   justify-items: center;
-
-  max-width: 1300px;                     /* reduce el ancho total del grid */
-  margin: 0 auto;                       /* centra horizontalmente */
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 1rem 0;
   margin-top: 20px;
 }
 
-/* ICONOS DE ARRIBA – columnas 1, 3, 5, 7 */
 .icon-top:nth-child(1) { grid-column: 1; }
 .icon-top:nth-child(2) { grid-column: 3; }
 .icon-top:nth-child(3) { grid-column: 5; }
 .icon-top:nth-child(4) { grid-column: 7; }
-
-/* ICONOS DE ABAJO – columnas 2, 4, 6 */
 .icon-bottom:nth-child(5) { grid-column: 2; }
 .icon-bottom:nth-child(6) { grid-column: 4; }
 .icon-bottom:nth-child(7) { grid-column: 6; }
 
-.im1{
-    width: 70px;
-    height: auto;
+.im1, .im2, .im4, .im6, .im7 {
+  width: 70px;
+  height: auto;
 }
 
-.im2{
-    width:70px;
-    height: auto;
+.im3 {
+  width: 90px;
+  height: auto;
+  margin-top: 5px;
 }
 
-.im3{
-    width: 90px;
-    height: auto;
-    margin-top: 5px;
+.im5 {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
 }
-
-.im4{
-    width: 70px;
-    height: auto;
-    margin-top: 20px;
-}
-
-.im5{
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.im6{
-    width: 70px;
-    height: auto;
-    margin-top: 10px;
-}
-.im7{
-    width: 80px;
-    height: auto;
-}
-
-.titulo-experiencia h3 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  position: relative;
-  display: inline-block;
-  margin-top: 4em;
-}
-.titulo-experiencia h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0%; 
-  width: 70%; 
-  height: 2px;
-  background-color: #3399FF; 
-  bottom: -10px;
-}
-.separacion-top {
-  margin-top: 2em;
-}
-
 
 .footer-contacto {
   display: flex;
@@ -292,70 +235,17 @@ body {
   gap: 2rem;
   padding: 2rem;
   background-color: #010918;
-  color: #333;
   margin-top: 15em;
-
-}
-
-.info-contacto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
 }
 
 .footer-info,
 .footer-formulario {
   flex: 1 1 300px;
   max-width: 500px;
-  justify-content: center;
-  align-content: center;
 }
-
-.footer-info h3,
-.footer-formulario h3 {
-  margin-bottom: 2rem;
-  font-weight: 600;
-  font-size: 40px;
-  position: relative;
-  display: inline-block;
-}
-.footer-formulario h3::after {
-  content: "";
-  position: absolute;
-  left: 26%;
-  transform: translateX(-50%);
-  bottom: -10px; /* espacio debajo del texto */
-  width: 200px;   /* ancho de la línea */
-  height: 4px;
-  background-color: #3399FF; /* o cualquier color corporativo */
-  border-radius: 2px;
-}
-
-.footer-info h3::after {
-  content: "";
-  position: absolute;
-  left: 32%;
-  transform: translateX(-50%);
-  bottom: -10px; /* espacio debajo del texto */
-  width: 100px;   /* ancho de la línea */
-  height: 4px;
-  background-color: #3399FF; /* o cualquier color corporativo */
-  border-radius: 2px;
-}
-
 
 .footer-info p {
   margin: 0.5rem 0;
-}
-
-.social-icons a {
-  margin-right: 0.5rem;
-}
-
-.social-icons img {
-  width: 24px;
-  height: 24px;
 }
 
 .footer-formulario form {
