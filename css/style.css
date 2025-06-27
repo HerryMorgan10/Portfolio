@@ -13,45 +13,66 @@
 html {
   scroll-behavior: smooth;
 }
-
+:root {
+  scroll-padding-top: 99px; /* igual al alto de tu header */
+}
 body {
   background: #001233;
   height: 100%;
 }
-
+/* Barra fija */
 .header_container {
-  height: 4em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding-top: 10px; /* 🔽 Menos altura */
 }
 
+/* Contenedor centrado */
 .nav_container {
-  border: 2px solid transparent;
-  border-radius: 25px;
-  padding: 10px 25px;
-  margin-top: 3em;
-}
-
-.nav_ul {
   display: flex;
-  gap: 5em;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Menú cápsula ajustado */
+.nav_ul {
+  position: relative;
+  display: inline-flex;
+  gap: 4em;
   list-style: none;
+  justify-content: center;
+  border: 2px solid #18538fb3;
+  border-radius: 50px;
+  padding: 0.3em 1.2em; /* 🔽 Menos altura */
+  backdrop-filter: blur(4px);
 }
 
-.nav_ul li a {
+/* Enlaces */
+.nav-link {
+  position: relative;
+  z-index: 1;
   text-decoration: none;
-  color: white;
   font-weight: 600;
-  transition: color 0.3s;
   font-size: 18px;
+  color: white;
+  padding: 0.4em 0.8em; /* opcional: también puedes reducir aquí un poco */
+  transition: color 0.3s ease;
 }
 
-.nav_ul li a:hover {
-  color: #338fff;
+/* Círculo animado detrás del enlace activo */
+.nav-circle {
+  position: absolute;
+  top: 10px;                /* 🔽 Subtílmente ajustado */
+  width: 100px;
+  height: 60%;              /* 🔽 Menos altura */
+  background: #0a4a8a58;
+  border-radius: 50px;
+  border: 2px solid #2377ca;
+  transition: left 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container-section {
@@ -60,6 +81,7 @@ body {
   align-items: center;
   padding: 0 10%;
   gap: 15em;
+ 
 }
 
 .section-content {
@@ -82,7 +104,11 @@ body {
 }
 
 .img-3d {
-  height: 440px;
+  width: 100%;
+  max-width: 440px; /* o el tamaño que quieras como tope */
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .image-download-wrapper {
@@ -147,6 +173,7 @@ body {
   margin: 0 auto;
   padding: 2em;
   max-width: 80em;
+  margin-top: 8em;
 }
 
 .imagen-sobre-mi img {
@@ -234,7 +261,7 @@ body {
   justify-content: space-around;
   gap: 2rem;
   padding: 2rem;
-  background-color: #010918;
+  background-color: #00112f;
   margin-top: 15em;
 }
 
@@ -277,7 +304,176 @@ body {
 }
 
 .input-sm {
-    height: 40px;
-    font-size: 1rem;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.section-icons {
+  margin-bottom: 10em;
+}
+
+.hamburger {
+  display: none;
+}
+
+
+/* ========== MEDIA QUERIES RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+  :root {
+    scroll-padding-top: 60px; /* valor ajustado para tablets */
+  }
+  
+  .container-section {
+    flex-direction: column;
+    gap: 3em;
+    padding: 0 5%;
+    height: auto;
+    text-align: center;
+    margin-top: 100px;
   }
 
+  .section-content h1 {
+    font-size: 42px;
+  }
+
+  .section-content h3 {
+    font-size: 24px;
+  }
+
+  .img-3d {
+    display: none;
+  }
+
+  .nav_ul {
+    gap: 2em;
+  }
+
+  .sobre-mi {
+    gap: 5em;
+    padding: 2em 5%;
+  }
+
+  .icon-layout {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  :root {
+    scroll-padding-top: 60px; /* valor ajustado para tablets */
+  }
+  .nav_container {
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 101;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .nav_ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    margin-top: 1em;
+    background-color: rgba(0, 18, 51, 0.95);
+    border-radius: 20px;
+    padding: 1em;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    border: 2px solid #18538fb3;
+    z-index: 100;
+  }
+
+  .nav_ul.active {
+    display: flex;
+  }
+
+  .nav-circle {
+    display: none;
+  }
+
+  .container-section {
+    padding: 0 2em;
+  }
+
+  .section-content h1 {
+    font-size: 36px;
+  }
+
+  .section-content h3 {
+    font-size: 20px;
+  }
+
+  .img-3d {
+    height: 250px;
+  }
+
+  .footer-contacto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-layout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-info,
+  .footer-formulario {
+    max-width: 100%;
+  }
+
+  
+}
+
+@media (max-width: 480px) {
+  .nav_ul {
+    gap: 0.5em;
+  }
+
+  .section-content h1 {
+    font-size: 28px;
+  }
+
+  .section-content h3 {
+    font-size: 18px;
+  }
+
+  .icon-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .img-3d {
+    max-width: 300px;
+  }
+
+  .icons {
+    padding: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer-formulario input,
+  .footer-formulario textarea {
+    font-size: 0.9rem;
+  }
+
+  .footer-formulario button {
+    font-size: 0.95rem;
+  }
+}
